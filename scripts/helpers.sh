@@ -121,7 +121,8 @@ resurrect_file_path() {
 _RESURRECT_FILE_PATH="$(resurrect_file_path)"
 
 last_resurrect_file() {
-	echo "$(resurrect_dir)/last"
+	# echo "$(resurrect_dir)/last"
+  find  "$(resurrect_dir)" -type f -maxdepth 1 -name 'tmux_resurrect_*.txt' | sort -r | head -1
 }
 
 pane_contents_dir() {
